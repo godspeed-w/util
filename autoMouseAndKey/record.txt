@@ -1,0 +1,20 @@
+/*
+* 在该文件中编写鼠标、键盘操作
+* 支持操作的keyword有： keyword = {'moveTo','dragTo','click','doubleClick','scroll','write','press','hotkey'}
+* 不同keyword的编写规则有：
+*     移动鼠标规则：moveTo x y interval cycle   如 moveTo 200 200 1 1 
+*     拖动窗口规则：dragTo x y interval cycle   如 dragTo 200 200 1 1
+*     单击操作规则：click x y cycle             如 click 200 200 1
+*     双击操作规则：doubleClick x y cycle       如 doubleClick 200 200 1
+*     鼠标滚动规则：scroll distance cycle       如 scroll -50 1
+*     模拟打字规则：write words cycle           如 write hello，world 1
+*     单次按键规则：press key cycle             如 press enter 1
+*     组合按键规则：hotkey keys cycle           如 hotkey 'ctrl','a' 1
+*     x,y表示坐标；interval为整数或小数，表示多少秒；
+*     distance表示像素值，正数表示向上，负数表示向下；cycle表示该操作的执行次数；
+*/
+**********在下面写鼠标、键盘操作****************
+moveTo 200 200 1 1
+click 600 430 0.5 1
+hotkey 'ctrl','a' 1
+write hello,world这是测试 1 
