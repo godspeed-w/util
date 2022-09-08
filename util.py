@@ -86,7 +86,8 @@ def dbExcuteOracle(execSql=''):
         'dsn': 'IP:端口/实例',
         'encoding': 'UTF-8'
     }
-    # 需要下载oracle客户端文件，
+    # 需要下载oracle客户端库
+    # https://www.oracle.com/database/technologies/instant-client.html
     cx_Oracle.init_oracle_client(lib_dir=r"")
     db = cx_Oracle.connect(**config)
     cur = db.cursor()

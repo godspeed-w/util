@@ -38,9 +38,9 @@ res = requests.post(url, data)
 print(res.text)
 print("*"*30)
 # json post请求
-url = 'http://127.0.0.1:8080/logincheck'
+url = 'http://127.0.0.1:8080/test_postJson'
 data = {'name': 'testuser1', 'password': '111111'}
 string = json.dumps(data)
-res = requests.post(url, data)
+res = requests.post(url, string)
 print(res.text)
 print("*"*30)
