@@ -61,7 +61,7 @@ def readJsonFile(fileName=None):
 
 
 def dbExcute(execSql=''):
-    """执行数据库操作"""
+    """执行mysql数据库操作"""
     config = {
         'host': '127.0.0.1',
         'port': 3306,
@@ -71,8 +71,26 @@ def dbExcute(execSql=''):
         'charset': 'utf8'
     }
     db = pymysql.connect(**config)
-    cursor = db.cursor()
-    cursor.execute(execSql)
-    data = cursor.fetchall()
+    cur = db.cursor()
+    cur.execute(execSql)
+    data = cur.fetchall()
+    db.close()
+    return data
+
+
+def dbExcuteOracle(execSql=''):
+    """执行oracle数据库操作"""
+    config = {
+        'user':'USERNAME', 
+        'password':'PASSWORD',
+        'dsn': 'IP:端口/实例',
+        'encoding': 'UTF-8'
+    }
+    # 需要下载oracle客户端文件，
+    cx_Oracle.init_oracle_client(lib_dir=r"")
+    db = cx_Oracle.connect(**config)
+    cur = db.cursor()
+    cur.execute(execSql)
+    data = cur.fetchall()
     db.close()
     return data
